@@ -8,3 +8,10 @@
 ```
  python fuse_caffe.py prototxt_path caffemodel_path fuse_name [--fusepath=]
 ```
+## 公式  
+$$ X_{bn} = \frac{s(X - m)}{\sqrt{\sigma + \epsilon}} + b_{bn}$$  
+$$ X_{conv} = X * W + b_{conv} $$  
+
+由此推得：
+$$ W' = W\frac{s}{\sqrt{\sigma + \epsilon}}$$
+$$ b' = (b_{conv} - m)\frac{s}{\sqrt{\sigma + \epsilon}} + b_{bn}$$
